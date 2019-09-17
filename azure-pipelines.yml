@@ -18,8 +18,8 @@ steps:
 
 # .NET Desktop
 - task: UseDotNet@2
+  displayName: 'Use .NET Core SDK 3.x'
   inputs:
-    packageType: 'sdk'
     version: '3.x'
     includePreviewVersions: true
 
