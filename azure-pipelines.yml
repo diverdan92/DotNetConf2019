@@ -18,8 +18,8 @@ steps:
 - task: MSBuild@1
   displayName: Build for $(BuildConfiguration)
   inputs:
-    solution: MyWPFApp.sln
+    solution: DotNetConf.sln
     platform: x86
-    msbuildArguments: /restore /p:AppInstallerUri=$(DistributionUrl) /p:UapAppxPackageBuildMode=$(MsixBuildMode) /p:GenerateAppInstallerFile=$(MsixGenerateAppInstaller)
+    msbuildArguments: /restore 
     configuration: $(BuildConfiguration)
     maximumCpuCount: false
