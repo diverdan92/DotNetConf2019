@@ -19,7 +19,6 @@ steps:
   displayName: Build for $(BuildConfiguration)
   inputs:
     solution: DotNetConf.sln
-    platform: x86
     msbuildArguments: /restore 
     configuration: $(BuildConfiguration)
     maximumCpuCount: false
