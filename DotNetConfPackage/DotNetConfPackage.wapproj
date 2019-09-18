@@ -73,7 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DotNetConf\DotNetConf.csproj">
+			<DesktopBridgeSelfContained>True</DesktopBridgeSelfContained>
+			<DesktopBridgeIdentifier>win-x86</DesktopBridgeIdentifier>
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+			<Properties>SelfContained=%(DesktopBridgeSelfContained);RuntimeIdentifier=%(DesktopBridgeIdentifier);PublishReadyToRun=true</Properties>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
