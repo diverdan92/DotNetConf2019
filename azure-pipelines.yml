@@ -4,7 +4,6 @@ trigger:
 variables:
   BuildConfiguration: Release
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  MsixBuildMode: CI
 
 
 pool:
@@ -22,6 +21,8 @@ steps:
   inputs:
     solution: DotNetConf.sln
     platform: x86
-    msbuildArguments: /restore /p:UapAppxPackageBuildMode=$(MsixBuildMode) 
+    msbuildArguments: /restore
     configuration: $(BuildConfiguration)
     maximumCpuCount: false
+
+
