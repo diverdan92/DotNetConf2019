@@ -1,5 +1,7 @@
 # DotNetConf2019
-Demo app used in the .NET Conf 2019 presentation on DevOps for Windows Apps with Azure DevOps and Visual Studio App Center
+Demo app used in the .NET Conf 2019 presentation on DevOps for Windows Apps with Azure DevOps and Visual Studio App Center.
+
+Based on the WPF Samples repository, specifically the [Calculator sample](https://github.com/microsoft/WPF-Samples/tree/master/Sample%20Applications/CalculatorDemo).
 
 
 ## CI Status
