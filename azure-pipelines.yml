@@ -21,4 +21,5 @@ steps:
     solution: DotNetConf.sln
     msbuildArguments: /restore 
     configuration: $(BuildConfiguration)
+    platform: x64
     maximumCpuCount: false
