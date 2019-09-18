@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:DotNetConf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="1" Color="#5A6B8C"/>
+            <SolidColorBrush x:Key="2" Color="#BFC7D9"/>
+            <SolidColorBrush x:Key="3" Color="#7289A6"/>
+            <SolidColorBrush x:Key="4" Color="#F2AC57"/>
+            <SolidColorBrush x:Key="5" Color="#BF7950"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

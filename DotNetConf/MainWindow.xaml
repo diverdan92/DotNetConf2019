@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DotNetConf"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title=".NET Calc 3.0"
         Height="350"
-        Width="525">
+        Width="525"
+        Background="{StaticResource 2}">
     <DockPanel Name="MyPanel">
         <Menu DockPanel.Dock="Top" Height="26">
             <MenuItem Header="File">
@@ -21,7 +22,7 @@
                 <MenuItem Click="OnMenuAbout" Header="About" />
             </MenuItem>
         </Menu>
-        <Grid Name="MyGrid" ShowGridLines="False">
+        <Grid Name="MyGrid" ShowGridLines="False" Margin="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
@@ -41,62 +42,62 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Button Name="B7" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="2">7</Button>
-            <Button Name="B8" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="2">8</Button>
-            <Button Name="B9" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="2">9</Button>
-            <Button Name="B4" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="3">4</Button>
-            <Button Name="B5" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="3">5</Button>
-            <Button Name="B6" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="3">6</Button>
-            <Button Name="B1" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="4">1</Button>
-            <Button Name="B2" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="4">2</Button>
-            <Button Name="B3" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="4">3</Button>
-            <Button Name="B0" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="5">0</Button>
-            <Button Name="BPeriod" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="5">.</Button>
-            <Button Name="BPM" Click="OperBtn_Click" Background="Darkgray" Grid.Column="6" Grid.Row="5">+/-</Button>
-            <Button Name="BDevide" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="2">/</Button>
-            <Button Name="BMultiply" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="3">*</Button>
-            <Button Name="BMinus" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="4">-</Button>
-            <Button Name="BPlus" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="5">+</Button>
-            <Button Name="BSqrt" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="2"
-                    ToolTip="Usage: 'A Sqrt'">
+            <Button Name="B7" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="2" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">7</Button>
+            <Button Name="B8" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="2" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">8</Button>
+            <Button Name="B9" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="2" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">9</Button>
+            <Button Name="B4" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="3" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">4</Button>
+            <Button Name="B5" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="3" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">5</Button>
+            <Button Name="B6" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="3" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">6</Button>
+            <Button Name="B1" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="4" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">1</Button>
+            <Button Name="B2" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="4" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">2</Button>
+            <Button Name="B3" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="4" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">3</Button>
+            <Button Name="B0" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="5" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">0</Button>
+            <Button Name="BPeriod" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="5" Background="{StaticResource 3}" FontWeight="Bold" Foreground="White" BorderBrush="#FFBFC7D9">.</Button>
+            <Button Name="BPM" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="6" Grid.Row="5" Foreground="White" FontWeight="Bold" BorderBrush="#FFBFC7D9">+/-</Button>
+            <Button Name="BDevide" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="7" Grid.Row="2" Foreground="White" FontWeight="Bold" BorderBrush="#FFBFC7D9">/</Button>
+            <Button Name="BMultiply" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="7" Grid.Row="3" Foreground="White" FontWeight="Bold" BorderBrush="#FFBFC7D9">*</Button>
+            <Button Name="BMinus" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="7" Grid.Row="4" Foreground="White" FontWeight="Bold" BorderBrush="#FFBFC7D9">-</Button>
+            <Button Name="BPlus" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="7" Grid.Row="5" Foreground="White" FontWeight="Bold" BorderBrush="#FFBFC7D9">+</Button>
+            <Button Name="BSqrt" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="8" Grid.Row="2" Foreground="White"
+                    ToolTip="Usage: 'A Sqrt'" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 Sqrt
             </Button>
-            <Button Name="BPercent" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="3"
-                    ToolTip="Usage: 'A % B ='">
+            <Button Name="BPercent" Click="OperBtn_Click" Background="{StaticResource 1}" Foreground="White" Grid.Column="8" Grid.Row="3"
+                    ToolTip="Usage: 'A % B ='" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 %
             </Button>
-            <Button Name="BOneOver" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="4"
-                    ToolTip="Usage: 'A 1/X'">
+            <Button Name="BOneOver" Click="OperBtn_Click" Background="{StaticResource 1}" Foreground="White" Grid.Column="8" Grid.Row="4"
+                    ToolTip="Usage: 'A 1/X'" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 1/X
             </Button>
-            <Button Name="BEqual" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="5">=</Button>
-            <Button Name="BC" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="1"
-                     ToolTip="Clear All">
+            <Button Name="BEqual" Click="OperBtn_Click" Background="{StaticResource 1}" Grid.Column="8" Grid.Row="5" Foreground="White" FontWeight="Bold" BorderBrush="#FFBFC7D9">=</Button>
+            <Button Name="BC" Click="OperBtn_Click" Background="{StaticResource 4}" Grid.Column="8" Grid.Row="1"
+                     ToolTip="Clear All" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 C
             </Button>
-            <Button Name="BCE" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="1"
-                    ToolTip="Clear Current Entry">
+            <Button Name="BCE" Click="OperBtn_Click" Background="{StaticResource 4}" Grid.Column="7" Grid.Row="1"
+                    ToolTip="Clear Current Entry" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 CE
             </Button>
-            <Button Name="BMemClear" Click="OperBtn_Click" Background="Darkgray" Grid.Column="3" Grid.Row="2"
-                    ToolTip="Clear Memory">
+            <Button Name="BMemClear" Click="OperBtn_Click" Background="{StaticResource 5}" Grid.Column="3" Grid.Row="2" Foreground="White" 
+                    ToolTip="Clear Memory" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 MC
             </Button>
-            <Button Name="BMemRecall" Click="OperBtn_Click" Background="Darkgray" Grid.Column="3" Grid.Row="3"
-                    ToolTip="Recall Memory">
+            <Button Name="BMemRecall" Click="OperBtn_Click" Background="{StaticResource 5}" Grid.Column="3" Grid.Row="3" Foreground="White"
+                    ToolTip="Recall Memory" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 MR
             </Button>
-            <Button Name="BMemSave" Click="OperBtn_Click" Background="Darkgray" Grid.Column="3" Grid.Row="4"
-                    ToolTip="Store in Memory">
+            <Button Name="BMemSave" Click="OperBtn_Click" Background="{StaticResource 5}" Grid.Column="3" Grid.Row="4" Foreground="White"
+                    ToolTip="Store in Memory" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 MS
             </Button>
-            <Button Name="BMemPlus" Click="OperBtn_Click" Background="Darkgray" Grid.Column="3" Grid.Row="5"
-                    ToolTip="Add To Memory">
+            <Button Name="BMemPlus" Click="OperBtn_Click" Background="{StaticResource 5}" Grid.Column="3" Grid.Row="5" Foreground="White"
+                    ToolTip="Add To Memory" FontWeight="Bold" BorderBrush="#FFBFC7D9">
                 M+
             </Button>
-            <TextBlock Name="BMemBox" Grid.Column="3" Grid.Row="1" Margin="10,17,10,17" Grid.ColumnSpan="2">Memory: [empty]</TextBlock>
-            <local:MyTextBox Grid.ColumnSpan="9" x:Name="DisplayBox" Height="30" Margin="5" />
-            <local:MyTextBox Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="5" Margin="5" x:Name="PaperBox" />
+            <TextBlock Name="BMemBox" Grid.Column="3" Grid.Row="1" Margin="10,10,10,0" Grid.ColumnSpan="2">Memory: [empty]</TextBlock>
+            <local:MyTextBox Grid.ColumnSpan="9" x:Name="DisplayBox" Height="30" FontWeight="Bold" FontSize="20" Margin="0" />
+            <local:MyTextBox Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="5" Margin="0,0,5,0" x:Name="PaperBox" />
         </Grid>
     </DockPanel>
 </Window>

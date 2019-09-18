@@ -6,6 +6,7 @@ using System.Windows.Input;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using System.Collections.Generic;
 
 namespace DotNetConf
 {
@@ -181,6 +182,7 @@ namespace DotNetConf
 				case "BEqual":
 					if (EraseDisplay) //stil wait for a digit...
 						break;
+					Analytics.TrackEvent("Pressed Equals");
 					CalcResults();
 					EraseDisplay = true;
 					_lastOper = Operation.None;
@@ -318,7 +320,11 @@ namespace DotNetConf
 				d = 0;
 				var parent = (Window)MyPanel.Parent;
 				_paper.AddResult("Error");
-				MessageBox.Show(parent, "Operation cannot be perfomed", parent.Title);
+				string equation = _paper.args;
+				var e = new Exception("You can't do that!");
+				Crashes.TrackError(e, new Dictionary<string,string>(){ { "Equation: ", equation } });
+				throw e;
+				//MessageBox.Show(parent, "Operation cannot be perfomed", parent.Title);
 			}
 
 			return d;
@@ -423,7 +429,7 @@ namespace DotNetConf
 		private class PaperTrail
 		{
 			private readonly MainWindow _window;
-			private string _args;
+			public string args;
 
 			public PaperTrail(MainWindow window)
 			{
@@ -432,18 +438,18 @@ namespace DotNetConf
 
 			public void AddArguments(string a)
 			{
-				_args = a;
+				args = a;
 			}
 
 			public void AddResult(string r)
 			{
-				_window.PaperBox.Text += _args + " = " + r + "\n";
+				_window.PaperBox.Text += args + " = " + r + "\n";
 			}
 
 			public void Clear()
 			{
 				_window.PaperBox.Text = string.Empty;
-				_args = string.Empty;
+				args = string.Empty;
 			}
 		}
 	}
