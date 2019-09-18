@@ -5,3 +5,5 @@
 /.vs/DotNetConf
 /DotNetConf/bin/Debug/netcoreapp3.0
 /DotNetConf/obj
+/DotNetConfPackage/bin/AnyCPU/Debug
+/DotNetConfPackage/obj/Debug
