@@ -1,12 +1,14 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-latest'
-
 variables:
-  solution: '**/*.sln'
-  buildConfiguration: 'Release'
+  BuildConfiguration: Release
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  MsixBuildMode: CI
+
+
+pool:
+  vmImage: 'windows-2019'
 
 steps:
 - task: UseDotNet@2
@@ -15,8 +17,11 @@ steps:
     version: '3.x'
     includePreviewVersions: true
 
-- task: VSBuild@1
+- task: MSBuild@1
+  displayName: Build for $(BuildConfiguration)
   inputs:
-    solution: '**\*.sln'
-    platform: 'x64'
-    configuration: 'Release'
+    solution: DotNetConf.sln
+    platform: x86
+    msbuildArguments: /restore /p:UapAppxPackageBuildMode=$(MsixBuildMode) 
+    configuration: $(BuildConfiguration)
+    maximumCpuCount: false
