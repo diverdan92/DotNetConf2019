@@ -4,9 +4,6 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
-		<Platforms>AnyCPU;x86</Platforms>
-		<RuntimeIdentifiers>win-x86</RuntimeIdentifiers>
-		<TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
   </PropertyGroup>
 
 </Project>
