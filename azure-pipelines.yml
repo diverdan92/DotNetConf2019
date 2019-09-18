@@ -16,13 +16,13 @@ steps:
     version: '3.x'
     includePreviewVersions: true
 
-- task: MSBuild@1
-  displayName: Build for $(BuildConfiguration)
+- task: DotNetCoreCLI@2
   inputs:
-    solution: DotNetConf.sln
-    platform: x86
-    msbuildArguments: /restore
-    configuration: $(BuildConfiguration)
-    maximumCpuCount: false
+    command: 'publish'
+    publishWebProjects: true
 
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
