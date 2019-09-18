@@ -15,11 +15,8 @@ steps:
     version: '3.x'
     includePreviewVersions: true
 
-- task: MSBuild@1
-  displayName: Build for $(BuildConfiguration)
+- task: VSBuild@1
   inputs:
-    solution: DotNetConf.sln
-    msbuildArguments: /restore 
-    configuration: $(BuildConfiguration)
-    platform: x64
-    maximumCpuCount: false
+    solution: '**\*.sln'
+    platform: 'x64'
+    configuration: 'Release'
