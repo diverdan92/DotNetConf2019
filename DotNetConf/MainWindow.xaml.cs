@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace DotNetConf
 {
@@ -23,10 +26,13 @@ namespace DotNetConf
 		public MainWindow()
 		{
 			InitializeComponent();
+			AppCenter.Start("586274fb-38e8-4132-8712-17a5fdf63907",
+				   typeof(Analytics), typeof(Crashes));
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
+			Analytics.TrackEvent("Button Clicked");
 			int i = 0;
 			var foo = 5 / i;
 		}
