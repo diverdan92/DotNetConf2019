@@ -393,7 +393,7 @@ namespace DotNetConf
 		private void OnMenuAbout(object sender, RoutedEventArgs e)
 		{
 			var parent = (Window)MyPanel.Parent;
-			MessageBox.Show(parent, parent.Title + " - By Jossef Goldberg ", parent.Title, MessageBoxButton.OK,
+			MessageBox.Show(parent, parent.Title, parent.Title, MessageBoxButton.OK,
 				MessageBoxImage.Information);
 		}
 
