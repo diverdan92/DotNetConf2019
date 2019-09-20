@@ -315,13 +315,12 @@ namespace DotNetConf
 						break;
 				}
 			}
-			catch
+			catch (Exception e)
 			{
 				d = 0;
 				var parent = (Window)MyPanel.Parent;
 				_paper.AddResult("Error");
 				string equation = _paper.args;
-				var e = new Exception("You can't do that!");
 				Crashes.TrackError(e, new Dictionary<string,string>(){ { "Equation: ", equation } });
 				throw e;
 				//MessageBox.Show(parent, "Operation cannot be perfomed", parent.Title);
