@@ -6,23 +6,13 @@
     <UseWPF>true</UseWPF>
     <PublishSingleFile>true</PublishSingleFile>
     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
-
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.3.0-preview" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.3.0-preview" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <None Remove="e_sqlite3.dll" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="e_sqlite3.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3.v110_xp" Version="1.1.14" />
   </ItemGroup>
 </Project>
