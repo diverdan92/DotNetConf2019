@@ -1,0 +1,28 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core 3.0 SDK'
+  inputs:
+    version: '3.0.x'
+    includePreviewVersions: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    zipAfterPublish: false
+    arguments: --output $(Build.ArtifactStagingDirectory)
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'Calculator'
