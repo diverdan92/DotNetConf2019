@@ -23,6 +23,9 @@ namespace DotNetConf
 		public MainWindow()
 		{
 			InitializeComponent();
+			AppCenter.LogLevel = LogLevel.Verbose;
+			AppCenter.Start("586274fb-38e8-4132-8712-17a5fdf63907",
+				   typeof(Analytics), typeof(Crashes));
 			_paper = new PaperTrail(this);
 			ProcessKey('0');
 			EraseDisplay = true;
