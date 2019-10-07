@@ -66,8 +66,8 @@ namespace DotNetConf
 		// Sample event handler:  
 		private void OnWindowKeyDown(object sender, TextCompositionEventArgs /*System.Windows.Input.KeyEventArgs*/ e)
 		{
-			var s = e.Text;
-			var c = (s.ToCharArray())[0];
+			string s = e.Text;
+			char c = (s.ToCharArray())[0];
 			e.Handled = true;
 
 			if ((c >= '0' && c <= '9') || c == '.' || c == '\b') // '\b' is backspace
@@ -100,10 +100,10 @@ namespace DotNetConf
 
 		private void DigitBtn_Click(object sender, RoutedEventArgs e)
 		{
-			var s = ((Button)sender).Content.ToString();
+			string s = ((Button)sender).Content.ToString();
 
 			//char[] ids = ((Button)sender).ID.ToCharArray();
-			var ids = s.ToCharArray();
+			char[] ids = s.ToCharArray();
 			ProcessKey(ids[0]);
 		}
 
@@ -119,7 +119,7 @@ namespace DotNetConf
 
 		private void ProcessOperation(string s)
 		{
-			var d = 0.0;
+			double d = 0.0;
 			switch (s)
 			{
 				case "BPM":
@@ -260,7 +260,7 @@ namespace DotNetConf
 
 		private double Calc(Operation lastOper)
 		{
-			var d = 0.0;
+			double d = 0.0;
 
 
 			try
@@ -318,7 +318,7 @@ namespace DotNetConf
 			catch (Exception e)
 			{
 				d = 0;
-				var parent = (Window)MyPanel.Parent;
+				Window parent = (Window)MyPanel.Parent;
 				_paper.AddResult("Error");
 				string equation = _paper.args;
 				Crashes.TrackError(e, new Dictionary<string, string>() { { "Equation: ", equation } });
@@ -380,7 +380,7 @@ namespace DotNetConf
 						Display = string.Empty;
 					else
 					{
-						var i = Display.Length;
+						int i = Display.Length;
 						Display = Display.Remove(i - 1, 1); //remove last char 
 					}
 				}
@@ -391,7 +391,7 @@ namespace DotNetConf
 
 		private void OnMenuAbout(object sender, RoutedEventArgs e)
 		{
-			var parent = (Window)MyPanel.Parent;
+			Window parent = (Window)MyPanel.Parent;
 			MessageBox.Show(parent, parent.Title, parent.Title, MessageBoxButton.OK,
 				MessageBoxImage.Information);
 		}
